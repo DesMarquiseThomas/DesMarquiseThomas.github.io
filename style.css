@@ -128,3 +128,8 @@ main {
       justify-content: center;
     }
 }
+
+body {
+  background-image: url("paper.gif");
+  background-color: #ab1d1d;
+ }
