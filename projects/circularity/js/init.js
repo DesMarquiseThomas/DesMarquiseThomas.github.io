@@ -20,13 +20,21 @@ var init = function (window) {
         ////////////////////////////////////////////////////////////
         
         // TODO 1 : Declare and initialize our variables
-
+         var circle; 
+         var circles = [0, 1];
 
         // TODO 2 : Create a function that draws a circle 
-        
+        function drawCircle(){
+            circle = draw.randomCircleInArea(canvas, true, true, "#999", 2);
+            physikz.addRandomVelocity(circle, canvas, 10, 10);
+            view.addChild(circle);
+            circles.push(circle);   
+        }
 
         // TODO 3 / 7 : Call the drawCircle() function 
-
+         while (drawCircle < 100){
+            drawCircle++;
+         }
 
         ////////////////////////////////////////////////////////////
         ///////////////// PROGRAM LOGIC ////////////////////////////
@@ -39,10 +47,19 @@ var init = function (window) {
         */
         function update() {
             // TODO 4 : Update the circle's position //
-
+            physikz.updatePosition(/* Your Bracket Notation HERE */);
+            physikz.updatePosition(/* Your Bracket Notation HERE */);
+            physikz.updatePosition(/* Your Bracket Notation HERE */);
+            physikz.updatePosition(/* Your Bracket Notation HERE */);
+            physikz.updatePosition(/* Your Bracket Notation HERE */);
+          }
             
             // TODO 5 / 10 : Call game.checkCirclePosition() on your circles.
-           
+            game.checkCirclePosition();
+            game.checkCirclePosition(/* Your Bracket Notation HERE */);
+            game.checkCirclePosition(/* Your Bracket Notation HERE */);
+            game.checkCirclePosition(/* Your Bracket Notation HERE */);
+            game.checkCirclePosition(/* Your Bracket Notation HERE */); 
 
             // TODO 9 : Iterate over the array
            
@@ -59,10 +76,10 @@ var init = function (window) {
             // if the circle has gone past the RIGHT side of the screen then place it on the LEFT
             if ( circle.x > canvas.width ) {
                 circle.x = 0;
-            }
+            } 
             
             // TODO 6 : YOUR CODE STARTS HERE //////////////////////
-            
+            if (circleRadius)
 
 
             // YOUR TODO 6 CODE ENDS HERE //////////////////////////
@@ -82,7 +99,7 @@ var init = function (window) {
         
         app.addUpdateable(window.opspark.game);
     }
-};
+}
 
 // DON'T REMOVE THIS CODE //////////////////////////////////////////////////////
 if((typeof process !== 'undefined') &&
